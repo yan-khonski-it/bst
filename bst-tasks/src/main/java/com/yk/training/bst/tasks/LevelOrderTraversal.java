@@ -6,4 +6,8 @@ package com.yk.training.bst.tasks;
  * https://leetcode.com/problems/binary-tree-level-order-traversal/
  */
 public class LevelOrderTraversal {
+
+    public static void main(String[] args) {
+
+    }
 }

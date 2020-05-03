@@ -1,4 +1,4 @@
 bst.iml
 .idea
-target
-tasks/target
+bst-core/target
+bst-tasks/target
