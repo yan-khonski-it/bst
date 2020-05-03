@@ -1,6 +1,8 @@
 package com.yk.training.bst.visitors;
 
 import com.yk.training.bst.Node;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.function.Consumer;
 
@@ -10,8 +12,10 @@ import java.util.function.Consumer;
  */
 public class ValuesPrinter implements Consumer<Node> {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ValuesPrinter.class);
+
     @Override
-    public void accept(Node node) {
-        System.out.println(node.value);
+    public void accept(final Node node) {
+        LOGGER.info("{}", node.value);
     }
 }

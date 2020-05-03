@@ -2,7 +2,6 @@ package com.yk.training.bst;
 
 import com.yk.training.bst.visitors.ValuesAccumulator;
 import com.yk.training.bst.visitors.ValuesPrinter;
-import com.yk.training.bst.visitors.ValuesToStringAccumulator;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -45,19 +44,6 @@ class BSTTraversalTest {
     }
 
     @Test
-    public void shouldPerorderToString() {
-        ValuesToStringAccumulator accumulator = new ValuesToStringAccumulator();
-        BSTTraversal.ALTERNATIVE_NODE_PRINTER = accumulator;
-        Tree tree = treeH5();
-
-        preorder(tree.root);
-        assertEquals(accumulator.getResult(),
-                "30, 15, 10, 8, 6, 9, 11, 20, 17, 16, 18, 21, 40, 35, 32, 36, 45, 44, 47");
-
-        BSTTraversal.ALTERNATIVE_NODE_PRINTER = null;
-    }
-
-    @Test
     public void shouldFailInorderNull() {
         ValuesAccumulator valuesAccumulator = new ValuesAccumulator();
         Tree tree = Tree.ofValues(List.of());
@@ -86,19 +72,6 @@ class BSTTraversalTest {
     }
 
     @Test
-    public void shouldInorderToString() {
-        ValuesToStringAccumulator accumulator = new ValuesToStringAccumulator();
-        BSTTraversal.ALTERNATIVE_NODE_PRINTER = accumulator;
-        Tree tree = treeH5();
-
-        inorder(tree.root);
-        assertEquals(accumulator.getResult(),
-                "6, 8, 9, 10, 11, 15, 16, 17, 18, 20, 21, 30, 32, 35, 36, 40, 44, 45, 47");
-
-        BSTTraversal.ALTERNATIVE_NODE_PRINTER = null;
-    }
-
-    @Test
     public void shouldFailPostorderNull() {
         ValuesAccumulator valuesAccumulator = new ValuesAccumulator();
         Tree tree = Tree.ofValues(List.of());
@@ -124,19 +97,6 @@ class BSTTraversalTest {
 
         postorder(tree.root, valuesAccumulator);
         assertEquals(expectedVisitedValues, valuesAccumulator.getAccumulatedValues());
-    }
-
-    @Test
-    public void shouldPostorderToString() {
-        ValuesToStringAccumulator accumulator = new ValuesToStringAccumulator();
-        BSTTraversal.ALTERNATIVE_NODE_PRINTER = accumulator;
-        Tree tree = treeH5();
-
-        postorder(tree.root);
-        assertEquals(accumulator.getResult(),
-                "6, 9, 8, 11, 10, 16, 18, 17, 21, 20, 15, 32, 36, 35, 44, 47, 45, 40, 30");
-
-        BSTTraversal.ALTERNATIVE_NODE_PRINTER = null;
     }
 
     /**

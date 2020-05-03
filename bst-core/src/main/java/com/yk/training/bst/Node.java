@@ -3,6 +3,7 @@ package com.yk.training.bst;
 /**
  * Represents a node in a binary tree.
  */
+@SuppressWarnings("PMD.MethodArgumentCouldBeFinal") // No getters and setters  on purpose of algorithm clarity.
 public class Node {
 
     public Node left;

@@ -12,7 +12,7 @@ public class NodesCounter implements Consumer<Node> {
     int count = 0;
 
     @Override
-    public void accept(Node node) {
+    public void accept(final Node node) {
         count++;
     }
 

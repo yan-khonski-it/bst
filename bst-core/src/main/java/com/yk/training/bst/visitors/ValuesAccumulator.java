@@ -15,7 +15,7 @@ public class ValuesAccumulator implements Consumer<Node> {
     private final List<Integer> accumulatedValues = new ArrayList<>();
 
     @Override
-    public void accept(Node node) {
+    public void accept(final Node node) {
         accumulatedValues.add(node.value);
     }
 

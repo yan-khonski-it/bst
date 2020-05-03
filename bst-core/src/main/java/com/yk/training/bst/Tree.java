@@ -21,7 +21,7 @@ public class Tree {
      */
     public Node root;
 
-    private Tree(Node root) {
+    private Tree(final Node root) {
         this.root = root;
     }
 
@@ -42,7 +42,7 @@ public class Tree {
     /**
      * Adds a new key into BST.
      */
-    public void add(int value) {
+    public void add(final int value) {
         if (isEmpty()) {
             root = new Node(value);
         } else {

@@ -16,6 +16,5 @@
     <rule ref="category/java/bestpractices.xml/UnusedLocalVariable"/>
     <rule ref="category/java/bestpractices.xml/UnusedPrivateField"/>
     <rule ref="category/java/codestyle.xml/DuplicateImports"/>
-    <rule ref="category/java/codestyle.xml/ShortMethodName"/>
     <rule ref="category/java/codestyle.xml/ShortVariable"/>
 </ruleset>

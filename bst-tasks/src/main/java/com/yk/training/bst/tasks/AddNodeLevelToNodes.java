@@ -4,6 +4,8 @@ import com.yk.training.bst.BSTTraversal;
 import com.yk.training.bst.Node;
 import com.yk.training.bst.NodeDetails;
 import com.yk.training.bst.Tree;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.function.Consumer;
 
@@ -15,13 +17,15 @@ import static com.yk.training.bst.samples.BSTSamples.treeH5;
  */
 public class AddNodeLevelToNodes {
 
-    public static void main(String[] args) {
+    private static final Logger LOGGER = LoggerFactory.getLogger(AddNodeLevelToNodes.class);
+
+    public static void main(final String[] args) {
         final Tree tree = treeH5();
         final NodeLevelVisitor nodeLevelVisitor = new NodeLevelVisitor();
         preorder(tree.root, nodeLevelVisitor.levelUp());
 
         // Print the tree
-        BSTTraversal.preorder(tree.root, node -> System.out.println(node.value + " " + node.nodeDetails.getLevel()));
+        BSTTraversal.preorder(tree.root, node -> LOGGER.info("{} {}", node.value, node.nodeDetails.getLevel()));
     }
 
     /**
@@ -49,7 +53,7 @@ class NodeLevelVisitor implements Consumer<Node> {
     int level = 0;
 
     @Override
-    public void accept(Node node) {
+    public void accept(final Node node) {
         node.nodeDetails = NodeDetails.of(level);
     }
 
