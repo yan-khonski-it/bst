@@ -1,7 +1,7 @@
 package com.yk.training.bst;
 
 /**
- * Basic BST operations: add, search, remove.
+ * Basic BST operations: add, search, min, max.
  */
 public class BSTOperations {
 

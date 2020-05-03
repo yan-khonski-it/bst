@@ -9,6 +9,10 @@ import java.util.List;
  */
 public class BSTSamples {
 
+    // TODO - change output after TreePrinter is done.
+    // TODO - make TreePrinter.
+    // https://leetcode.com/problems/print-binary-tree/
+
     /**
      * <pre>
      *                                       30

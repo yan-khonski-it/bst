@@ -4,6 +4,9 @@ import com.yk.training.bst.Node;
 
 import java.util.function.Consumer;
 
+/**
+ * Counts leave in BST.
+ */
 public class LeavesCounter implements Consumer<Node>  {
 
     int count = 0;

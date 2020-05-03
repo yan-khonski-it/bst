@@ -5,6 +5,7 @@ import java.util.List;
 
 /**
  * Represents a binary search tree.
+ *
  * This class contains common operations performed on BST.
  * {@code empty} tree is also supported: {@code root} is {@code null}.
  */

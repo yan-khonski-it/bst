@@ -4,6 +4,9 @@ import com.yk.training.bst.Node;
 
 import java.util.function.Consumer;
 
+/**
+ * Counts {@link Node}s in BST.
+ */
 public class NodesCounter implements Consumer<Node> {
 
     int count = 0;
