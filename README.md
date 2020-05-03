@@ -1,28 +1,7 @@
-# Binary Search Tree algorithms
+# Binary Search Tree algorithms and related tasks
 
-### Add node
+This is a parent pom which configures maven build for children modules.
 
-### Search node
+[core  (Basic algorithms)](https://github.com/yan-khonski-it/bst/tree/master/bst-core)
 
-### Find minimum
-
-### Find maximum
-
-### Delete node with minimum element
-
-### Delete node with maximum element
-
-### Delete a node with given key
-
-### Traverse tree
-
-#### Inorder
-#### Preorder
-#### Postorder
-
-### TODO
-### Print tree
-
-### Tree and arrays
-
-### Build tree from presentations
+[Tasks](https://github.com/yan-khonski-it/bst/tree/master/bst-tasks)

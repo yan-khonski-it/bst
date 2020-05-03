@@ -14,10 +14,14 @@ import static com.yk.training.bst.samples.BSTSamples.treeH5;
 /**
  * Mark each node with level of this node.
  * Node, root has level 1.
+ * <p>
+ * Solution, when we perform a {@link BSTTraversal#preorder(Node, Consumer)} operation, we pass root level as 1.
+ * For next nodes, we pass previous level + 1.
+ * When {@code preorder} operation finishes, we decrement current level.
  */
-public class AddNodeLevelToNodes {
+public class MarkNodesWithLevel {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AddNodeLevelToNodes.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(MarkNodesWithLevel.class);
 
     public static void main(final String[] args) {
         final Tree tree = treeH5();
@@ -46,25 +50,30 @@ public class AddNodeLevelToNodes {
 
         visitor.levelDown();
     }
+
+    /**
+     * Visits a {@link Node} and marks its level.
+     */
+    private static class NodeLevelVisitor implements Consumer<Node> {
+
+        int level = 0;
+
+        @Override
+        public void accept(final Node node) {
+            node.nodeDetails = NodeDetails.of(level);
+        }
+
+        public NodeLevelVisitor levelUp() {
+            level++;
+            return this;
+        }
+
+        @SuppressWarnings("UnusedReturnValue")
+        public NodeLevelVisitor levelDown() {
+            level--;
+            return this;
+        }
+    }
 }
 
-class NodeLevelVisitor implements Consumer<Node> {
 
-    int level = 0;
-
-    @Override
-    public void accept(final Node node) {
-        node.nodeDetails = NodeDetails.of(level);
-    }
-
-    public NodeLevelVisitor levelUp() {
-        level++;
-        return this;
-    }
-
-    @SuppressWarnings("UnusedReturnValue")
-    public NodeLevelVisitor levelDown() {
-        level--;
-        return this;
-    }
-}

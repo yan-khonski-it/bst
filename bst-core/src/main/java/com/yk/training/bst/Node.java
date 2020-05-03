@@ -32,4 +32,9 @@ public class Node {
     public boolean hasBothChildren() {
         return left != null && right != null;
     }
+
+    @Override
+    public String toString() {
+        return value + "";
+    }
 }
