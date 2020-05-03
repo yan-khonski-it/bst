@@ -17,7 +17,7 @@ import static com.yk.training.bst.samples.BSTSamples.treeH5;
  * <p>
  * Solution, start with {@link MarkNodesWithLevel}.
  * It can be done in one iteration,
- * so complexity is O(n) - iterate through N elements of the tree;
+ * so complexity is O(N) - iterate through N elements of the tree;
  * and memory complexity is O(N) - we need to store 2D array of elements, but their total size is N.
  * <p>
  * When we visit a node, we can store node value and its level.
